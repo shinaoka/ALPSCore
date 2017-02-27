@@ -111,7 +111,6 @@ namespace alps {
             }
 
             void check_validity() const {
-                std::cout << "debug2 "<< valid_ << std::endl;
                 if (!valid_) {
                     throw std::runtime_error("pieacewise_polynomial object is not properly constructed!");
                 }
@@ -131,7 +130,6 @@ namespace alps {
                     valid_ = valid_ && (section_edges_[i] < section_edges_[i + 1]);
                 }
                 assert(valid_);
-                std::cout << "debug "<< valid_ << std::endl;
             }
 
         public:
