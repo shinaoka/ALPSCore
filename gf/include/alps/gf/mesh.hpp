@@ -888,7 +888,7 @@ namespace alps {
                 ar[path+"/statistics"] << int(statistics_);
                 ar[path+"/beta"] << beta_;
                 for (int l=0; l < dim_; ++l) {
-                    ar[path+"/basis_functions"+boost::lexical_cast<std::string>(l)] << basis_functions_[l];
+                    basis_functions_[l].save(ar, path+"/basis_functions"+boost::lexical_cast<std::string>(l));
                 }
             }
 
@@ -922,8 +922,8 @@ namespace alps {
                 }
                 ar[path+"/beta"] >> beta;
                 basis_functions_.resize(dim);
-                for (int l=0; l < dim_; ++l) {
-                    ar[path+"/basis_functions"+boost::lexical_cast<std::string>(l)] >> basis_functions_[l];
+                for (int l=0; l < dim; ++l) {
+                    basis_functions_[l].load(ar, path+"/basis_functions"+boost::lexical_cast<std::string>(l));
                 }
 
                 statistics_=statistics::statistics_type(stat);

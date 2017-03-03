@@ -113,33 +113,3 @@ TEST(PiecewisePolynomial, SaveLoad) {
     ASSERT_TRUE(p == p2);
 }
 
-
-/*
-TEST(Mesh,SwapLegendre) {
-    alps::gf::legendre_mesh mesh_1(5.0, 20, alps::gf::statistics::FERMIONIC);
-    alps::gf::legendre_mesh mesh_1r(mesh_1);
-    alps::gf::legendre_mesh mesh_2(10.0, 40, alps::gf::statistics::BOSONIC);
-    alps::gf::legendre_mesh mesh_2r(mesh_2);
-
-    mesh_1.swap(mesh_2);
-    EXPECT_EQ(mesh_1, mesh_2r);
-    EXPECT_EQ(mesh_2, mesh_1r);
-}
-
-TEST(Mesh,PrintMatsubaraMeshHeader) {
-    double beta=5.;
-    int n=20;
-    {
-        std::stringstream header_line;
-        header_line << "# MATSUBARA mesh: N: "<<n<<" beta: "<<beta<<" statistics: "<<"FERMIONIC"<<" POSITIVE_ONLY"<<std::endl;
-        alps::gf::matsubara_mesh<alps::gf::mesh::POSITIVE_ONLY> mesh1(beta, n);
-        std::stringstream header_line_from_mesh;
-        header_line_from_mesh << mesh1;
-        EXPECT_EQ(header_line.str(), header_line_from_mesh.str());
-    }
-    {
-        std::stringstream header_line;
-        header_line << "# MATSUBARA mesh: N: "<<n<<" beta: "<<beta<<" statistics: "<<"FERMIONIC"<<" POSITIVE_NEGATIVE"<<std::endl;
-
-}
- */

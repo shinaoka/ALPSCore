@@ -209,7 +209,7 @@ namespace alps {
             T overlap(const piecewise_polynomial<T2, k2> &other) const {
                 check_validity();
                 if (section_edges_ != other.section_edges_) {
-                    throw std::runtime_error("Not supported");
+                    throw std::runtime_error("Computing overlap between piecewise polynomials with different section edges are not supported");
                 }
                 typedef BOOST_TYPEOF(static_cast<T>(1.0)*static_cast<T2>(1.0))  Tr;
 
@@ -341,9 +341,6 @@ namespace alps {
                 pps[l] = (1.0 / std::sqrt(norm)) * pp_new;
             }
         }
-
-
-
     }
 }
 

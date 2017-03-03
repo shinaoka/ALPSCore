@@ -12,7 +12,7 @@ set (test_srcs
   itime_gf_test
   fourier_test
   grid_test
-  numerical_basis_test
+  piecewise_polynomial_test
     )
 
 
