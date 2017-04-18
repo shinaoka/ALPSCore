@@ -919,8 +919,10 @@ namespace alps {
                 valid_ = valid_ && beta_ >= 0.0;
                 valid_ = valid_ && (statistics_==statistics::FERMIONIC || statistics_==statistics::BOSONIC);
 
-                for (int l=0; l < basis_functions_.size()-1; ++l) {
-                    valid_ = valid_ && (basis_functions_[l].section_edges() == basis_functions_[l+1].section_edges());
+                if (basis_functions_.size() > 1) {
+                    for (int l=0; l < basis_functions_.size()-1; ++l) {
+                        valid_ = valid_ && (basis_functions_[l].section_edges() == basis_functions_[l+1].section_edges());
+                    }
                 }
             }
 
